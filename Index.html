@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shyam Balasubramaniyan's personal portfolio website showcasing software development skills and projects.">
+    <meta name="keywords" content="portfolio, software developer, web developer, Shyam Balasubramaniyan">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/0cb074ecfa.js" crossorigin="anonymous"></script>
+    <style>
+        /* Existing CSS rules */
+
+        .project-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.project {
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 350px;
+    min-height: 350px; /* Set a minimum height to increase the length of the card */
+    transition: transform 0.3s ease-in-out;
+    flex-direction: column;
+}
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        .project-image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+        .project-info h3 {
+            margin: 0 0 10px;
+            font-size: 1.2em;
+        }
+
+        .project-info .description {
+    display: none; /* Hide the description by default */
+    font-size: 0.9em;
+    color: #ddd;
+    margin: 10px 0;
+}
+
+        .project-info .description.visible {
+            display: block;
+        }
+
+        .project-info h2 {
+            margin: 10px 0 5px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #ddd; /* Adjusted color for headings */
+        }
+
+        /* New styles for "Show Description" link */
+        .project-info .toggle-description {
+            color: white; /* Change the color to white */
+            text-decoration: none; /* Remove underline from the link */
+            cursor: pointer; /* Change cursor to pointer to indicate clickable element */
+        }
+
+        .project-info .toggle-description:hover {
+            text-decoration: underline; /* Optional: Add underline on hover for better user experience */
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <h1>I'm Shyam Balasubramaniyan</h1>
+                <p>Software Developer</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/shyam06" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Shyam0601" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/imagesabout.png" alt="About Me">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        I am a self-motivated and passionate individual with a Bachelor's degree in Information Technology. I possess knowledge in software development and have a strong interest in learning new technologies and approaches. Currently, I am working as a DOT NET developer, applying my skills to create innovative solutions and contribute to various projects.
+                        I am eager to advance my career with a reputable IT firm. My goal is to leverage my skills and enthusiasm to grow in the field of software development, take on new challenges, and make meaningful contributions to a dynamic organization.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                        <p class="tab-links" onclick="opentab('Internship')">Internship</p>
+                        <p class="tab-links" onclick="opentab('Achievements')">Achievements</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li><span>PROGRAMMING LANGUAGES</span><br>C#,SQL,HTML,Java (Basic)</li> 
+                            <li><span>TECHNOLOGIES KNOWN</span><br>Git, GitHub<br>Visual Studio Code<br>Figma<br>ASP.NET MVC</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>2019-2023</span><br>B.Tech in Information Technology<br>Anjalai Ammal Mahalingam Engineering College - Kovilvenni.<br>I completed my B.Tech with a CGPA of 8/10.</li>
+                            <li><span>2018-2019</span><br>HSC<br>Dharani Matriculation Higher Secondary School - Mannargudi.<br>I completed my HSC with 65%.</li>
+                            <li><span>2016-2017</span><br>SSLC<br>Dharani Matriculation Higher Secondary School - Mannargudi.<br>I completed my SSLC with 84.4%.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Internship">
+                        <ul>
+                            <li><span>INTERNSHIP IN PYTHON </span><br>Attended an in-plant training program at Uniq Technologies focused on Python programming. During this training, I gained valuable insights and practical knowledge about Python, enabling me to better understand and work with this innovative technology in various applications.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Achievements">
+                        <ul>
+                            <li><span>JOURNAL PUBLICATION</span><br>Published "Identifying Fuel Express: The On-Demand Delivery App" in the International Journal of Advance Research in Science, Communication, and Technology (IJARSCT), Volume 3, Issue 3, May 2023, DOI: 10.48175/JARST-98161. Impact Factor: 7.301.</li>
+                            <li><span>CERTIFICATION</span><br>1. I Have completed the IBM Nalaiyathiran Project Title as Crop Production System under the theme of IOT </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Section -->
+    <div id="experience">
+        <div class="container">
+            <h1 class="sub-title">Experience</h1>
+            <div class="experience-list">
+                <div class="experience">
+                    <h3>Software Developer at Digifrontal IT Solution - Thanjavur</h3>
+                    <span>FEB 2024 - Present</span>
+                    <p> 
+                        ● Developed and enhanced key software modules using ASP.NET MVC and Entity Framework.<br>
+                        ● Collaborated with a team of developers to design and implement core functionalities.<br>
+                        ● Optimized database performance to improve load times for critical tasks.<br>
+                        ● Implemented secure authentication and authorization protocols, enhancing system security and protecting sensitive data.<br>
+                        ● Published and deployed software on the server, ensuring consistent uptime and delivering a seamless experience for active users.<br>
+                        ● Worked with ASP.NET Core MVC to implement CRUD operations and integrated IdentityServer for secure authentication and authorization.<br>
+                        ● Provided ongoing maintenance and support, resolving issues and rolling out updates to meet evolving business needs.<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub-title">Projects</h1>
+            <div class="project-list">
+                <div class="project">
+                    <div class="project-image">
+                        <img src="images/mychat.png" alt="Chatify Application">
+                    </div>
+                    <div class="project-info">
+                        <h3>CHATIFY MOBILE APPLICATION</h3>
+                        <a href="#" class="toggle-description" onclick="toggleInfo(event)">Show Description</a>
+                        <div class="description">
+                            <p>Launched a fully integrated application for Android devices with specialized chatting features.<br>The main objective of this project is to create a real-time communication platform for users.</p>
+                            <h2>Tech Stack</h2>
+                            <p>Flutter,Firebase</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-image">
+                        <img src="images/fuel.webp" alt="Fuel Delivery Application">
+                    </div>
+                    <div class="project-info">
+                        <h3>FUELISTIC APPLICATION</h3>
+                        <a href="#" class="toggle-description" onclick="toggleInfo(event)">Show Description</a>
+                        <div class="description">
+                            <p>Our innovative project leverages advanced technology to bring fuel directly to the customer's location upon their order.<br>Say goodbye to inconvenient fuel station visits. Fuelistic delivers fuel efficiently and precisely to meet your needs.</p>
+                            <h2>Tech Stack</h2>
+                            <p> Java,XML,Firebase</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-image">
+                        <img src="images/Hrms.jpg" alt="HRMS">
+                    </div>
+                    <div class="project-info">
+                        <h3>HUMAN RESOURCE MANAGEMENT SYSTEM</h3>
+                        <a href="#" class="toggle-description" onclick="toggleInfo(event)">Show Description</a>
+                        <div class="description">
+                            <p>HRMS is a comprehensive web application designed to streamline and automate HR processes. The system provides functionalities to manage employee details, payroll information, and critical HR activities such as finance organization .</p>
+                            <h2>Tech Stack</h2>
+                            <p>C#,HTML,CSS,SQL</p><br>
+                        
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact">
+        <div class="container">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fas fa-envelope"></i> shyambalasubramaniyan5@gmail.com</p>
+        </div>
+    </div>
+    
+
+    <footer>
+        <p>© 2024 Shyam Balasubramaniyan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Tab functionality
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (var tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (var tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+
+        // Toggle description visibility
+        function toggleInfo(event) {
+            event.preventDefault();
+            const description = event.target.nextElementSibling;
+            description.classList.toggle('visible');
+        }
+    </script>
+    <script>
+        // Toggle description visibility
+function toggleInfo(event) {
+    event.preventDefault();
+    const description = event.target.nextElementSibling;
+    description.classList.toggle('visible');
+    
+    // Optionally, change the link text based on visibility
+    if (description.classList.contains('visible')) {
+        event.target.textContent = 'Hide Description';
+    } else {
+        event.target.textContent = 'Show Description';
+    }
+}
+
+    </script>
+</body>
+</html>
